@@ -1,0 +1,125 @@
+{% extends 'collegesite/base.html' %} {% load static %} {% block precontent %}
+<div class="header mb-4">
+    <img class='header-img' src="{% static 'img/header-img.jpg' %}" alt="">
+    <div class="text-center">
+        <p class="pt-4">THE EXAM TALK</p>
+        <h1>Learn all the trick you need to get an A in O level Mathematics</h1>
+
+        <p>JOIN US AND GET THE HELP YOU NEED</p>
+
+        <br>
+        <a href="#free" id="btn1" class="btn header-btn btn-lg btn-inline">get started</a>
+
+        <a href="#me" id="btn2" class="btn header-btn btn-lg btn-inline ">about me</a>
+    </div>
+</div>
+<div class="container">
+
+    <div class="row ml-auto mr-auto ">
+        
+        
+        <div id="me" class=" mb-4 text-center col-md-6">
+            <img class='img1 img-rounded img img-fluid' src="{% static 'img/pc-2.jpeg' %}" alt="">
+        </div>
+
+        <div  class=" mb-4 col-md-6">
+            <h1 id="">Hi, I'm Dellan &nbsp;<i class="fa fa-smile-o "></i> </h1> <small>The Chief Executive Officer</small>
+            <p>My name if Dellan Muchengapadare and  I am a tutor at ExamTalk. My goal is to assist 'O' LEVEL students with Mathematics exam technics inorder to turn any grade into a higher grade. my main focus  to help out those who had lots of repeats but still fail.</p>
+            <p>Checkout the tutorials and free resources available here at ExamTalk </p>
+        </div>
+        
+        
+    </div>
+</div>
+
+{% endblock  %}
+
+{% block content %}
+    <h1 id="free" class="text-center free mr-auto ml-auto mt-3 mb-3">Free tutorials</h1>
+    <div class="row mr-auto ml-auto ">
+			{% include 'tutorials/tutorial_list.html' %}
+    
+    </div>
+
+<section id="qoute">
+    <div class="container">
+        <div class="row justify-content-center ">
+            
+            
+            
+            
+            <div class="col-md-6  ">
+                <h1>About the Exam</h1>
+                <blockquote class="blockquote">
+                    <i class="fa fa-quote-left fa-2x "></i>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Labore, accusamus, ducimus, consectetur, vitae repellat deserunt aspernatur odit maiores at provident blanditiis eum autem saepe voluptatem recusandae? Enim, alias tempora maiores.
+                </blockquote>
+                
+            </div>
+            
+             <div class="col-md-6 text-center">
+                <img src="{% static 'img/qoute.png' %}" alt="" class="img-responsive  img1">
+            </div>
+           
+            
+            
+        </div>
+        
+    </div>
+    
+    
+</section>
+
+
+<section>
+    <h1 class="text-center  mr-auto ml-auto mt-3 mb-4">Premium tutorials</h1>
+    <div  >
+			{% include 'tutorials/tutorial_list.html' %}
+    
+    </div>
+
+</section>
+
+
+
+
+    <section class="mt-4 mb-4 mt-4" id="contact">
+        <div class="container card p-4">
+            <div class="row">
+                <div class="col-md-6">
+                    
+                    <i class="fa text-center fa-laptop fa-5x"></i> &nbsp;<p class="contact">Contact us</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, itaque, ex molestias nihil provident ea natus accusantium possimus minima culpa.</p>
+                </div>
+                <div class="col-md-6">
+                    <form action="">
+                        <div class="form-row">
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" placeholder="First name">
+                            </div>
+                            <div class="col-sm-6">
+                                <input type="text" class="form-control" placeholder="Last name">
+                            </div>
+                        </div>
+                        <br>
+                        <input type="email" placeholder="email" class="form-control">
+                        <br>
+                        <textarea class="form-control" name="" rows="8" cols="40"> type your message </textarea>
+                        <br>
+                        <input type="submit" placeholder="email" class="btn btn-block text-light btn3">
+
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+
+
+    </section>
+
+
+
+    
+{%  endblock %}
+        
