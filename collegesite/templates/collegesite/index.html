@@ -1,4 +1,4 @@
-{% extends 'collegesite/base.html' %} {% load static %} {% block precontent %}
+ {% extends 'collegesite/base.html' %} {% load static %} {% block precontent %}
 <div class="header mb-4">
     <img class='header-img' src="{% static 'img/header-img.jpg' %}" alt="">
     <div class="text-center">
@@ -92,19 +92,20 @@
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda, itaque, ex molestias nihil provident ea natus accusantium possimus minima culpa.</p>
                 </div>
                 <div class="col-md-6">
-                    <form action="">
+                    <form method="POST" action="">
+                    	{% csrf_token %}
                         <div class="form-row">
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="First name">
+                                <input type="text" name="first_name" class="form-control" placeholder="First name">
                             </div>
                             <div class="col-sm-6">
-                                <input type="text" class="form-control" placeholder="Last name">
+                                <input type="text" name="last_name" class="form-control" placeholder="Last name">
                             </div>
                         </div>
                         <br>
-                        <input type="email" placeholder="email" class="form-control">
+                        <input type="email" name="email" placeholder="email" class="form-control">
                         <br>
-                        <textarea class="form-control" name="" rows="8" cols="40"> type your message </textarea>
+                        <textarea class="form-control" name="name" rows="8" cols="40"> type your message </textarea>
                         <br>
                         <input type="submit" placeholder="email" class="btn btn-block text-light btn3">
 

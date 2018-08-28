@@ -1,5 +1,5 @@
 <div class="row  mr-auto ml-auto" id="course-list">
-        {% for tutorial in tutorial_list %}
+        {% for tutorial in object_list %}
         <div class="col-md-3 col-sm-6 ">
 
             <div id="{{tutorial.pk}}" class="card mb-4" style="width:100%;">
@@ -14,7 +14,7 @@
                     <li class="list-group-item"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star-half-o"></i> <i class="fa fa-star-o"></i>&nbsp;&nbsp; <h5 id="">${{ tutorial.prize}}</h5></li>
                 </ul>
                 <div class="card-body">
-                    <button  class=" add-to-cart card-link btn btn-primary btn-block add-to-cart"><strong>enroll</strong></button>
+                    <a href="{% url 'tutorials:course_detail' slug=tutorial.slug %}" class=" add-to-cart card-link btn btn-primary btn-block add-to-cart"><strong>enroll</strong></a>
                 
                 </div>
             </div>

@@ -1,0 +1,26 @@
+{% extends "accounts/base.html" %}
+{% load crispy_forms_tags %}
+{% block form %}
+
+<div class="account-info " >
+	<div class="container">
+	<div class=" pt-4 logo text-center"><h2>Django Boards </h2></div>
+		<div class="row justify-content-center">
+			<div class=" my-4 card p-4 col-md-6">
+				<h3 class="card-title">login</h3>
+<form class="form" method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	{{form|crispy}}
+	<br>
+	<input class="btn btn-block btn-primary" type="submit" value="login">
+</form>
+<div class=" text-center mx-0 mt-4 card-footer">
+	<span class="text-muted">New to django?</span> <a href="{% url 'login'%}"> signup</a>
+</div>
+
+</div>
+</div>
+</div>
+</div>
+
+{% endblock %}

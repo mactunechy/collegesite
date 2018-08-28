@@ -1,0 +1,38 @@
+{% extends 'collegesite/base.html' %} {% load static %} {% block content %}
+<div class="container">
+ 	<ol class="breadcrumb mt-3 bg-white">
+ 		<li class="breadcrumb-item"><i class="fa  fa-dashboard"></i> Dashdoard</li>
+ 		<li class=" active breadcrumb-item">{{request.user.username}}<li>
+ 	
+ 		<li class=" active breadcrumb-item">{{course.title}}<li>
+ 	
+ 	</ol>
+ 	<div class="bg-dark">
+    <div class="row">
+        <div class="col-md-8">
+        	<div class="" style="height:500px;background:#8F8B8B">
+        		<video src="{{current_video.url}}">
+        			
+        		</video>
+        	</div>
+        </div>
+    		<div class="col-md-4">
+    			           {% for topic in course.tutorials.all %}
+                        
+                    <li class="list-group-item ">
+                        <div class="row">
+                        <div class="col-sm-2">
+                            <i class="fa fa-video-camera"></i>
+                        </div>
+                        <div class="col-sm-1">{{topic.position}}</div>
+                        <div class="col-sm-7">{{topic.topic}}</div>
+                        <div class="col-sm-2">{{topic.length}}</div>
+                        </div>
+                    </li>
+                    {% endfor %}
+
+
+    		</div>
+    </div>
+    </div>
+    {% endblock%}

@@ -1,7 +1,7 @@
 from django.contrib import admin
-from .models import Tutorial, Registered_students 
+from .models import Tutorial, Registered_student ,Course
 # Register your models here.
 
 admin.site.register(Tutorial)
-admin.site.register(Registered_students)
-
+admin.site.register(Registered_student)
+admin.site.register(Course)

@@ -9,8 +9,8 @@
     <meta name="description" content=" Exam Talk">
     <meta name="author" content="Dellan Muchengapadare">
 
-    <title><i class="fa fa-mortar-board"></i></title>
-
+    <title>Exam Talk</title>
+<link rel="shortcut icon" type="x-icon" class="fa fa-mortar-board">
     <!-- Bootstrap core CSS -->
     <link href= "{% static 'vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
      <link rel="stylesheet" href="{% static 'icons/font-awesome.min.css' %}" />
@@ -35,7 +35,7 @@
             </li>
             
               
-               <li class="nav-item ">
+       <!--        <li class="nav-item ">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
           <i class="fa fa-cart-plus">&nbsp;shopping cart</i>
         </a>
@@ -54,16 +54,37 @@
              <a href="#" class="btn btn-block btn-default"></a>
         </div>
       </li>
-              <li class="nav-item">
-              <a class="nav-link" href="#"><i class="fa fa-folder-open"></i>&nbsp;Resources</a>
+      
+      
+  -->  
+       {% if user.is_authenticated %}
+          <li class="nav-item">
+	              <a class="nav-link" href="#"><i class="fa fa-power-off"></i>&nbsp;Signout</a>
+	            </li>
+	         
+       {% else %}
+	            <li class="nav-item">
+	              <a class="nav-link" href="#"><i class="fa fa-folder-open"></i>&nbsp;Resources</a>
+	            </li>
+	            <li class="nav-item">
+              <a class="nav-link" href="#contact"><i class="fa fa-envelope"></i>&nbsp;Contact</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#contact"><i class="fa fa-envelope"></i>&nbsp;Contact</a>
+       <button  class="nav-link btn btn-link"  data-toggle="modal"   data-target="#myModal"><i class="fa fa-sign-in"></i>&nbsp; Signin   </button>      </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="#contact"><i class="fa fa-pencil-square-o"></i>&nbsp;Register</a>
+            </li>
+            {% endif %}
             
           </ul>
         </div>
       </div>
     </nav>
+    
+    
+    
+    
 <div class="spacer"></div>
          
           {% block precontent %}    
@@ -76,7 +97,11 @@
      
       <!-- /.row -->
 
-
+<!-- modal -->
+    <!--  Button trigger modal  --> <!--  Modal  --> <div  class="modal fade"  id="myModal"  tabindex="-1"  role="dialog"   aria-labelledby="myModalLabel"  aria-hidden="true"> <div  class="modal-dialog"> <div  class="modal-content"> <div  class="modal-header"> <span class="mr-auto"> <button  type="button"  class="close"   data-dismiss="modal"  aria-hidden="true"> &times; </button></span> <h4  class="modal-title text-center "  id="myModalLabel"> 
+    Sign in
+    	</h4> </div> <div  class="modal-body"> Add some text here </div> <div  class="modal-footer"> <button  type="button"  class="btn btn-default"   data-dismiss="modal">Close </button> <button  type="button"  class="btn btn-primary"> Sign in </button> </div> </div><!--  /.modal-content  --> </div><!--  /.modal  --> 
+    </div>
     <!-- Footer -->
 
     <footer class=" text-light" id="footer">

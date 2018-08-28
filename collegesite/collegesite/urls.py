@@ -18,18 +18,14 @@ from django.urls import path,include
 from . import views
 from django.conf.urls.static import static
 from . import settings
-from django.views.generic import TemplateView
-from tutorials.views import TutorialListView
+from tutorials.views import CourseListView
+from .mail import send_email
 urlpatterns = [
-		path('',TutorialListView.as_view(), name = 'home'),
+		path('',CourseListView.as_view(), name = 'home'),
     path('admin/', admin.site.urls),
     path('tutorials/',include('tutorials.urls')),
-    path('accounts/', include('allauth.urls')),
-    path('accounts/welcome',views.WelcomePage.as_view(), name='welcome'),
-    path('accounts/thanks',views.ThanksPage.as_view(), name = 'thanks'),
-    path('accounts/login',views.LoginPage.as_view(),name="account_login"),
-    path('accounts/signup',views.SignupPage.as_view(),name="account_signup"),
-    
+    path('accounts/',include("accounts.urls")),
+    path('dashboard/',include('dashboard.urls')) 
     
     
 ]

@@ -1,0 +1,86 @@
+{% extends 'collegesite/base.html' %} {% load static %} {% block content %}
+ <div class="modal fade" id="mybuy" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header"> <span class="mr-auto"> <button  type="button"  class="close"   data-dismiss="modal"  aria-hidden="true"> &times; </button></span>
+                    <h4 class="modal-title text-center " id="myModalLabel"> 
+    Pay with Ecocash
+    	</h4> </div>
+                <div class="modal-body"><input type="tel" class="form-control" placeholder="Ecocash number"><br>
+                enter password into the prompt box that appear on your phone</div>
+                <div class="modal-footer"><a href="{% url 'tutorials:enroll' pk=object.pk %}" class="btn btn-primary"> Buy now </a> <button type="button" class="btn btn-default" data-dismiss="modal">Cancel </button>  </div>
+            </div>
+            <!--  /.modal-content  -->
+        </div>
+        <!--  /.modal  -->
+    </div>
+   
+<div class="header mb-4">
+    <img class="header-img" src="{% static 'img/header-img.jpg' %}" alt="" />
+
+    <div class="text-center">
+        <h5 class="pt-4">{{object.title}}</h5>
+        <h1 style="font-size:3em">{{object.description}}</h1>
+        <br />
+
+        <h3>
+					<button href="#free" id="" data-toggle="modal" data-target="#mybuy" class="btn btn-danger btn-lg btn-inline">Buy Now</button>
+				</h3>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div id="{{object.pk}}" class="card mb-4" style="width:100%;">
+                <img class="card-img-top img-card" src="{{ object.cover_image.url }}" alt="{{object.description}}" />
+
+                <div class="card-body">
+                    <p class="card-text">{{object.description}}</p>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star"></i>
+                        <i class="fa fa-star-half-o"></i>
+                        <i class="fa fa-star-o"></i>
+                        <h4 id="" class="float-right">${{ object.prize}}</h4>
+                    </li>
+                </ul>
+                <div class="card-body">
+                    <input type="tel" class="form-control" placeholder="Ecocash number" />
+
+                    <small>Enter your ecocash passwoard into the prompt box that appear on your phone</small>
+                    <br />
+
+                    <a href="{% url 'tutorials:enroll' pk=object.pk %}" class=" add-to-cart card-link btn btn-primary btn-block add-to-cart">
+								<strong>enroll</strong>
+							</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8 ">
+         
+            <div class="card">
+                <div class="text-center list-group-item">   <h3>Topics</h3></div>
+                    {% for topic in object.tutorials.all %}
+                        
+                    <li class="list-group-item ">
+                        <div class="row">
+                        <div class="col-sm-2">
+                            <i class="fa fa-video-camera"></i>
+                        </div>
+                        <div class="col-sm-1">{{topic.position}}</div>
+                        <div class="col-sm-7">{{topic.topic}}</div>
+                        <div class="col-sm-2">{{topic.length}}</div>
+                        </div>
+                    </li>
+                    {% endfor %}
+
+                
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
